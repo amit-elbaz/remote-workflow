@@ -1,0 +1,16 @@
+metadata:
+  name: remote-worklfow-node-selector
+spec:
+  desired_state: online
+  functions:
+  - url: func.py
+    name: my-func
+    kind: job
+    image: mlrun/mlrun
+    handler: func
+  workflows:
+  - path: my_workflow.py
+    name: my_workflow
+  source: ''
+  conda: ''
+kind: project
