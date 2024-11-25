@@ -8,7 +8,7 @@ from kfp.dsl import ContainerOp
 def kfpipeline():
     project = mlrun.get_current_project()
     func = project.get_function("my-func")
-    func.with_preemption_mode("allow")
+    func.with_preemption_mode("constrain")
     #func.with_node_selection(node_selector={"app.iguazio.com/node-group": "added-wr17wzokx4"})
     func.save()
     # step = func.run().set_retry(policy="Always",num_retries=1)
