@@ -5,17 +5,19 @@ from kfp.dsl import ContainerOp
 
 
 @dsl.pipeline()
-def kfpipeline():
+def kfpipeline(preemption_mode=None, node_selector=None):
     project = mlrun.get_current_project()
-    func = project.get_function("my-func", ignore_cache=True)
-    #func.with_preemption_mode("constrain")
-    #func.with_node_selection(node_selector={"app.iguazio.com/node-group": "added-wr17wzokx4"})
-    #func.save()
+    func = project.get_function("my-func")
+    if preemption_mode:
+        func.with_preemption_mode(preemption_mode)
+    if node_selector:
+        func.with_node_selection(node_selector=node_selector)
+    func.save()
     # step = func.run().set_retry(policy="Always",num_retries=1)
     # Put the kfp pod on a constant node
     
-    #step = mlrun.run_function(name="step1", function="my-func")
-    step = func.run()
+    step = mlrun.run_function(name="step1", function="my-func")
+    # step = func.run()
     # step.node_selector={"app.iguazio.com/node-group": "added-ondemand"}
     
     
