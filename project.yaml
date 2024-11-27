@@ -14,10 +14,10 @@ spec:
     image: mlrun/mlrun
     handler: func_prevent
   - url: func.py
-    name: my-func-constraint
+    name: my-func-constrain
     kind: job
     image: mlrun/mlrun
-    handler: func-constraint
+    handler: func-constrain
   workflows:
   - path: my_workflow.py
     name: my_workflow
