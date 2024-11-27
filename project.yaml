@@ -17,7 +17,7 @@ spec:
     name: my-func-constrain
     kind: job
     image: mlrun/mlrun
-    handler: func-constrain
+    handler: func_constrain
   workflows:
   - path: my_workflow.py
     name: my_workflow
