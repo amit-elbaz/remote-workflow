@@ -4,10 +4,20 @@ spec:
   desired_state: online
   functions:
   - url: func.py
-    name: my-func
+    name: my-func-allow
     kind: job
     image: mlrun/mlrun
-    handler: func
+    handler: func_allow
+  - url: func.py
+    name: my-func-prevent
+    kind: job
+    image: mlrun/mlrun
+    handler: func_prevent
+  - url: func.py
+    name: my-func-constraint
+    kind: job
+    image: mlrun/mlrun
+    handler: func-constraint
   workflows:
   - path: my_workflow.py
     name: my_workflow
