@@ -9,9 +9,9 @@ def kfpipeline(preemption_mode=None, node_selector=None):
     project = mlrun.get_current_project()
     func = project.get_function("my-func")
     if preemption_mode:
-        func.with_preemption_mode(preemption_mode)
+        func.with_preemption_mode(str(preemption_mode))
     if node_selector:
-        func.with_node_selection(node_selector=node_selector)
+        func.with_node_selection(node_selector=dict(node_selector))
     func.save()
     # step = func.run().set_retry(policy="Always",num_retries=1)
     # Put the kfp pod on a constant node
