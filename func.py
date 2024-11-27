@@ -8,6 +8,6 @@ def func_prevent(context):
     return 1
 
 
-def func_constraint(context):
-    print("Hi from inside the func_constraint")
+def func_constrain(context):
+    print("Hi from inside the func_constrain")
     return 1
