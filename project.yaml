@@ -23,6 +23,4 @@ spec:
     name: my_workflow
   source: ''
   conda: ''
-  default_function_node_selector:
-    app.iguazio.com/node-group: added-wr17wzokx4
 kind: project
