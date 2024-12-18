@@ -18,7 +18,7 @@ spec:
     kind: job
     image: mlrun/mlrun
     handler: func_constrain
-   - url: func.py
+  - url: func.py
     name: my-func-error
     kind: job
     image: mlrun/mlrun
