@@ -27,9 +27,9 @@ def kfpipeline():
     func_prevent = project.get_function("my-func-prevent")
     func_constrain = project.get_function("my-func-constrain")
     
-    func_allow.with_preemption_mode("allow")
-    func_prevent.with_preemption_mode("prevent")
-    func_constrain.with_preemption_mode("constrain")
+    # func_allow.with_preemption_mode("allow")
+    # func_prevent.with_preemption_mode("prevent")
+    # func_constrain.with_preemption_mode("constrain")
     
     func_allow.save()
     func_prevent.save()
