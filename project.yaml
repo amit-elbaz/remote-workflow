@@ -30,4 +30,6 @@ spec:
     name: error_workflow
   source: ''
   conda: ''
+  default_function_node_selector:
+    topology.kubernetes.io/region: us-east-2
 kind: project
